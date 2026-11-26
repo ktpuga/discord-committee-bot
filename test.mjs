@@ -8,7 +8,7 @@ process.env.DISCORD_GUILD_ID = "123456789012345678";
 process.env.API_BASE_URL = "http://api.test";
 process.env.BOT_API_SECRET = "test-secret";
 
-const { reconcileRoleAssignments, syncPendingJobs } = await import("../discord-bot/src/sync.js");
+const { reconcileRoleAssignments, syncPendingJobs } = await import("./src/sync.js");
 
 // Every call the worker makes on a member is recorded in one ordered log, so a
 // test can assert what did NOT happen as well as what did.

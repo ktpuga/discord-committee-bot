@@ -17,9 +17,7 @@ async function request(path, options = {}) {
 
   return response.status === 204 ? null : response.json();
 }
-// this is andrew trying to learn a cli editor 
-// These endpoints are intentionally the only API contract the bot needs.
-// Implement them in ktp-api after this service is deployed.
+// These endpoints are the bot's API contract with ktp-api.
 export function getPendingJobs() {
   return request("/discord/role-sync/jobs?status=pending");
 }

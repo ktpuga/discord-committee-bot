@@ -56,3 +56,10 @@ Each returned job must have this shape:
 Yes. A Discord bot maintains a persistent connection to Discord, so it needs a continuously running host. This repository is deployed independently from ktp-api and communicates with it over the protected role-sync endpoints.
 
 Use one bot instance only. Do not deploy it as a serverless function.
+
+For Dokploy, deploy this repository using `docker-compose.yml` and set
+`DISCORD_BOT_TOKEN`, `DISCORD_GUILD_ID`, and `BOT_API_SECRET` in the service's
+environment. Set `API_BASE_URL` and `SYNC_INTERVAL_MS` if the defaults in
+`.env.example` need to change. The bot does not need an exposed port.
+For a local Compose deployment, copy `.env.example` to `.env`, fill in the
+values, and run `docker compose up --build -d`.
